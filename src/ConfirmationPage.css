@@ -1,0 +1,145 @@
+
+body {
+  background-color: #000000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+}
+
+form {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  display: inline;
+  margin-left: 5px;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #de0303;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #e00404;
+  border: 2px solid #000000;
+}
+
+.success-message {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #da0000;
+  color: #fff;
+  padding: 5px;
+  bottom: 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.success-message button {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.banner {
+  background-color: #000000;
+  position:relative;
+  border-radius: 10px;
+  padding: 9px;
+  width: 95%;
+  height: 90vh;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner img {
+  width: 99.9%;
+  height: 99.9%;
+  object-fit: fill;
+  border-radius: 7px;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1),rgba(0, 0, 1, 1),rgba(0, 1, 1, 1), rgba(1, 1, 1, 1), rgba(1, 1, 1, 1), rgba(0, 1, 1, 1), rgba(0, 0, 1, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+}
+
+.banner h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.banner p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.arrow {
+  font-size: 60px;
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: -30px;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
