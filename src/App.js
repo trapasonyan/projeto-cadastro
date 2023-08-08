@@ -9,7 +9,6 @@ import banner5 from './imagens/banner5.jpg';
 
 const App = () => {
   const cadastroRef = useRef(null);
-  const storedCadastroData = JSON.parse(localStorage.getItem('cadastroData'))
 
   const handleScrollToCadastro = () => {
     cadastroRef.current.scrollIntoView({behavior: 'smooth'});
@@ -33,7 +32,7 @@ const App = () => {
       </div>
 
       <div className="cadastro-section" ref={cadastroRef}>
-      <ConfirmationPage initialData = {storedCadastroData} />
+      <ConfirmationPage />
       </div>
 
       <div className="banner">

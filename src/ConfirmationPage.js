@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './ConfirmationPage.css'
 
-const ConfirmationPage = ({ initialData }) => {
-  const [formData, setFormData] = useState(initialData || {
+const ConfirmationPage = () => {
+  const [formData, setFormData] = useState({
     nome: '',
     nomeEmpresa: '',
     telefone: '',
