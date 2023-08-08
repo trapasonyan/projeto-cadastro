@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './ConfirmationPage.css'
 
-const ConfirmationPage = () => {
-  const [formData, setFormData] = useState({
+const ConfirmationPage = ({ initialData }) => {
+  const [formData, setFormData] = useState(initialData || {
     nome: '',
     nomeEmpresa: '',
     telefone: '',
@@ -20,6 +20,7 @@ const ConfirmationPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Dados do formulário:', formData);
+    localStorage.setItem('cadastroData', JSON.stringify(formData));
     setShowSuccessMessage(true); 
   };
 
