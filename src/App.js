@@ -1,10 +1,16 @@
 import React, { useRef }  from 'react';
 import ConfirmationPage from './ConfirmationPage';
-import banner1 from './imagens/banner1.jpg';
-import banner2 from './imagens/banner2.jpg';
-import banner3 from './imagens/banner3.jpg';
-import banner4 from './imagens/banner4.jpg';
-import banner5 from './imagens/banner5.jpg';
+import banner1Desktop from './imagens/banner1desktop.png';
+import banner1Mobile from './imagens/banner1mobile.png';
+import banner2Desktop from './imagens/banner2desktop.png';
+import banner2Mobile from './imagens/banner2mobile.png';
+import banner3Desktop from './imagens/banner3desktop.png';
+import banner3Mobile from './imagens/banner3mobile.png';
+import banner4Desktop from './imagens/banner4desktop.png';
+import banner4Mobile from './imagens/banner4mobile.png';
+import banner5Desktop from './imagens/banner5desktop.png';
+import banner5Mobile from './imagens/banner5mobile.png';
+
 
 
 const App = () => {
@@ -14,18 +20,20 @@ const App = () => {
     cadastroRef.current.scrollIntoView({behavior: 'smooth'});
   };
 
+  const isMobile = window.innerWidth <= 500;
+
   return (
     <div>
       <div className="banner">
-      <img src={banner1} alt='banner1'/>
+      <img src={isMobile ? banner1Mobile : banner1Desktop} alt='banner1'/>
       </div>
 
       <div className="banner">
-      <img src={banner2} alt='banner2'/>
+      <img src={isMobile ? banner2Mobile : banner2Desktop} alt='banner2'/>
       </div>
 
       <div className="banner">
-      <img src={banner3} alt='banner3'/>
+      <img src={isMobile ? banner3Mobile : banner3Desktop} alt='banner3'/>
       <div className="arrow" onClick={handleScrollToCadastro}>
         🠗
       </div>
@@ -36,11 +44,11 @@ const App = () => {
       </div>
 
       <div className="banner">
-      <img src={banner4} alt='banner4'/>
+      <img src={isMobile ? banner4Mobile : banner4Desktop} alt='banner4'/>
       </div>
 
       <div className="banner">
-      <img src={banner5} alt='banner5'/>
+      <img src={isMobile ? banner5Mobile : banner5Desktop} alt='banner5'/>
       </div>
 
       </div>
