@@ -11,8 +11,6 @@ import banner4Mobile from './imagens/banner4mobile.png';
 import banner5Desktop from './imagens/banner5desktop.png';
 import banner5Mobile from './imagens/banner5mobile.png';
 
-
-
 const App = () => {
   const cadastroRef = useRef(null);
 
@@ -35,7 +33,7 @@ const App = () => {
       <div className="banner">
       <img src={isMobile ? banner3Mobile : banner3Desktop} alt='banner3'/>
       <div className="arrow" onClick={handleScrollToCadastro}>
-        🠗
+        ▼ 
       </div>
       </div>
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './ConfirmationPage.css'
 
+const Cadastro = require('./models/Cadastro');
+
 const ConfirmationPage = () => {
   const [formData, setFormData] = useState({
     nome: '',
@@ -20,9 +22,17 @@ const ConfirmationPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Dados do formulário:', formData);
-    localStorage.setItem('cadastroData', JSON.stringify(formData));
-    setShowSuccessMessage(true); 
   };
+
+  const cadastro = new Cadastro(formData);
+  cadastro.save((err) => {
+    if (err) {
+      console.error('Erro ao salvar no MongoDB:', err);
+    } else {
+      console.log('Dados salvos no MongoDB');
+      setShowSuccessMessage(true);
+    }
+  });
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
