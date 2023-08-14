@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import { initializeApp } from "firebase/app";
+import { collection, getFirestore, getDocs, addDoc} from "firebase/firestore";
+import React, { useState, useEffect }  from 'react';
 import './ConfirmationPage.css'
 
-const Cadastro = require('./models/Cadastro');
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyBDQquVs0sC_fxyxtBWvKFNSkmYg-YmqZ4",
+  authDomain: "cadastrofeira-ad2cf.firebaseapp.com",
+  projectId: "cadastrofeira-ad2cf"
+});
 
 const ConfirmationPage = () => {
   const [formData, setFormData] = useState({
@@ -19,22 +25,38 @@ const ConfirmationPage = () => {
     setFormData({ ...formData, [name]: newValue });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Dados do formulário:', formData);
+    
+    try {
+    const docRef = await addDoc(userCollectionRef, formData);
+    console.log("Documento adicionado com ID: ", docRef.id);
+    setShowSuccessMessage(true);
+    setFormData({
+      nome: '',
+      nomeEmpresa: '',
+      telefone: '',
+      email: '',
+      documento: '',
+      autorização: false,
+    });
+  } catch (error) {
+    console.error("Erro ao adicionar documento: ", error);
+  }
   };
 
-  const cadastro = new Cadastro(formData);
-  cadastro.save((err) => {
-    if (err) {
-      console.error('Erro ao salvar no MongoDB:', err);
-    } else {
-      console.log('Dados salvos no MongoDB');
-      setShowSuccessMessage(true);
-    }
-  });
-
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const db = getFirestore(firebaseApp);
+  const userCollectionRef = collection(db, "clientes");
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const data =  await getDocs(userCollectionRef);
+      console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
+    getUsers();
+  }, [userCollectionRef]);
 
   return (
     <div className="container">

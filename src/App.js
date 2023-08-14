@@ -1,5 +1,7 @@
 import React, { useRef }  from 'react';
+
 import ConfirmationPage from './ConfirmationPage';
+
 import banner1Desktop from './imagens/banner1desktop.png';
 import banner1Mobile from './imagens/banner1mobile.png';
 import banner2Desktop from './imagens/banner2desktop.png';
@@ -12,6 +14,7 @@ import banner5Desktop from './imagens/banner5desktop.png';
 import banner5Mobile from './imagens/banner5mobile.png';
 
 const App = () => {
+
   const cadastroRef = useRef(null);
 
   const handleScrollToCadastro = () => {
