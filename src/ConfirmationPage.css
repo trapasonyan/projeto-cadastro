@@ -66,8 +66,8 @@ input[type="checkbox"] {
 
 .success-message {
   font-family: 'Montserrat', sans-serif;
-  background-color: #da0000;
-  color: #fff;
+  background-color: #13bc00;
+  color: #000000;
   padding: 5px;
   bottom: 15px;
   border-radius: 5px;
@@ -82,8 +82,8 @@ input[type="checkbox"] {
 
 .success-message button {
   background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #000000;
+  border: 2px solid #000000;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
